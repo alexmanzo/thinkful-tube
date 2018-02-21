@@ -1,0 +1,22 @@
+* {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.js-query {
+	text-align: left;
+}
+
+button {
+	padding: 10px;
+	background-color: red;
+	color: white;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+input {
+	width: 250px;
+	height: 30px;
+	font-size: 14px;
+}
