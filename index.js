@@ -13,13 +13,16 @@ function getAPIData(searchTerm, callback) {
 }
 
 function renderResult(result) {
-  return `
+  if (result.id.kind === 'youtube#video') {
+      return `
     <div>
-      <a href="https://www.youtube.com/watch?v=${result.id.videoId}">
+      <a href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">
         <img src="${result.snippet.thumbnails.medium.url}">
       </a>
     </div>
   `;
+  } 
+
 }
 
 function displayYouTubeSearchData(data) {
@@ -27,6 +30,7 @@ function displayYouTubeSearchData(data) {
   console.log(results)
   $('.js-search-results').html(results);
 }
+
 
 function watchSubmit() {
   $('.js-search-form').submit(event => {
