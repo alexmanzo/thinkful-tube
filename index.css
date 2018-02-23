@@ -29,3 +29,7 @@ label {
 .resultsNum {
 	font-style: italic;
 }
+
+.result-container {
+	margin-bottom: 20px;
+}

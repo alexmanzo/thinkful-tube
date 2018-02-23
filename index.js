@@ -16,9 +16,9 @@ function getAPIData(searchTerm, callback) {
 
 function renderResult(result) {
       return `
-    <div>
+    <div class="result-container">
       <a href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">
-        <img src="${result.snippet.thumbnails.medium.url}">
+        <img src="${result.snippet.thumbnails.medium.url}" alt="${result.snippet.title},.">
       </a>
     </div>
   `;
