@@ -5,15 +5,16 @@ function getAPIData(searchTerm, callback) {
     maxResults: '50',
     part: 'snippet',
     q: `${searchTerm}`,
-    key: 'AIzaSyBiKLJOIR-lW3S41-BWXkZHqyONmBkXG9k'
+    key: 'AIzaSyBiKLJOIR-lW3S41-BWXkZHqyONmBkXG9k',
+    type: 'video'
   }
 
   $.getJSON(youtubeSearchURL, query, callback);
 
 }
 
+
 function renderResult(result) {
-  if (result.id.kind === 'youtube#video') {
       return `
     <div>
       <a href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">
@@ -21,13 +22,14 @@ function renderResult(result) {
       </a>
     </div>
   `;
-  } 
-
 }
+
 
 function displayYouTubeSearchData(data) {
   const results = data.items.map((item, index) => renderResult(item));
-  console.log(results)
+  const totalResultsNum = `<p>Your search returned <span class="resultsNum">${data.pageInfo.totalResults}</span> results.</p>`;
+  $('.js-output').prop('hidden', false);
+  $('.js-results-num').html(totalResultsNum);
   $('.js-search-results').html(results);
 }
 

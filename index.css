@@ -7,9 +7,10 @@
 	text-align: left;
 }
 
+
 button {
 	padding: 10px;
-	background-color: red;
+	background-color: #720000;
 	color: white;
 	font-size: 14px;
 	border-radius: 5px;
@@ -19,4 +20,12 @@ input {
 	width: 250px;
 	height: 30px;
 	font-size: 14px;
+}
+
+label {
+	text-align: left;
+}
+
+.resultsNum {
+	font-style: italic;
 }
